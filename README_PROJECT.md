@@ -1,207 +1,295 @@
-# AI Assignment Project
+# Artificial Intelligence Algorithms Collection
 
-This project contains implementations of fundamental AI algorithms and games, including Alpha-Beta Pruning visualization, Hidden Markov Model (Viterbi algorithm), and an interactive Tic-Tac-Toe game with AI.
+This repository contains implementations of core Artificial Intelligence concepts using Python. The project demonstrates algorithm design, decision-making techniques, probability-based reasoning, and interactive gameplay through practical examples.
 
-## Project Overview
+The repository includes algorithm visualization, probabilistic state prediction, and AI-driven game logic.
 
-The project consists of three main Python modules demonstrating key concepts in artificial intelligence:
+---
 
-### 1. **Alpha-Beta Pruning** (`alpha_beta_prunning.py`)
-An implementation of the Alpha-Beta pruning algorithm with game tree visualization. This algorithm optimizes the minimax algorithm by eliminating branches that don't need to be evaluated.
+## Project Summary
 
-**Features:**
-- Builds game tree structures
-- Visualizes the pruning process using Graphviz
-- Generates visual output showing which branches were pruned
-- Tracks alpha and beta values during execution
+This project is organized into three independent modules that explore important AI techniques and applications.
 
-### 2. **Hidden Markov Model - Viterbi Algorithm** (`hmm_viterbi.py`)
-Implementation of the Viterbi algorithm for finding the most likely sequence of hidden states in a Hidden Markov Model.
+### 1. Alpha-Beta Search Optimization (`alpha_beta_algorithm.py`)
 
-**Features:**
-- Solves the decoding problem in HMMs
-- Computes optimal hidden state sequences
-- Visualizes probability matrices using matplotlib
-- Supports custom transition and emission probabilities
+This module demonstrates the Alpha-Beta Pruning technique used to optimize decision-making in game trees.
 
-### 3. **Tic-Tac-Toe with AI** (`tic_tac_toe.py`)
-An interactive Tic-Tac-Toe game where you can play against an AI opponent powered by the Minimax algorithm.
+The implementation reduces unnecessary evaluations while preserving optimal results from the minimax process.
 
-**Features:**
-- Human vs AI gameplay
-- AI uses minimax with alpha-beta pruning
-- Interactive command-line interface
-- Tracks game state and win conditions
+#### Main Features
 
-## Requirements
+* Constructs and evaluates game trees
+* Performs Alpha-Beta optimization
+* Generates visual representations using Graphviz
+* Displays pruning decisions and evaluation flow
+* Tracks Alpha and Beta values dynamically
 
-Before running the project, ensure you have Python 3.6+ installed.
+---
 
-### Dependencies
+### 2. Hidden Markov Model — Viterbi Implementation (`viterbi_algorithm.py`)
 
-All required Python packages are listed in `requirements.txt`:
-- **contourpy** (1.3.3) - Required for matplotlib
-- **cycler** - Required for matplotlib
-- **graphviz** - For generating game tree visualizations
-- **kiwisolver** - Required for matplotlib
-- **matplotlib** - For plotting and visualization
-- **numpy** - For numerical computations in Viterbi algorithm
-- **packaging** - Dependency management
-- **Pillow** - Image processing library
-- **pyparsing** - Parsing utilities
+This module applies the Viterbi algorithm to determine the most probable hidden state sequence in a Hidden Markov Model.
 
-## Installation Instructions
+It demonstrates probabilistic inference and sequence prediction.
 
-### Step 1: Install Python Packages
+#### Main Features
 
-Navigate to the project directory and install all required Python dependencies:
+* Computes optimal hidden-state transitions
+* Performs sequence decoding
+* Displays probability distributions visually
+* Supports customizable transition and emission parameters
+* Generates probability plots using Matplotlib
+
+---
+
+### 3. AI-Based Tic-Tac-Toe (`tic_tac_toe_game.py`)
+
+A command-line Tic-Tac-Toe application where users compete against an AI opponent.
+
+The AI uses Minimax enhanced with Alpha-Beta optimization to make strategic decisions.
+
+#### Main Features
+
+* Interactive player vs AI gameplay
+* Smart move selection using Minimax
+* Alpha-Beta optimization for faster decisions
+* Automatic game-state evaluation
+* Win and draw detection
+
+---
+
+# Requirements
+
+Install **Python 3.6 or later** before running the project.
+
+## Required Libraries
+
+Dependencies are provided in:
+
+```bash
+requirements.txt
+```
+
+Included packages:
+
+* contourpy
+* cycler
+* graphviz
+* kiwisolver
+* matplotlib
+* numpy
+* packaging
+* Pillow
+* pyparsing
+
+---
+
+# Installation Guide
+
+## Step 1 — Install Python Dependencies
+
+Open a terminal inside the project folder and run:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 2: Install Graphviz (Important for Windows!)
+---
 
-**⚠️ IMPORTANT FOR WINDOWS USERS:**
+## Step 2 — Install Graphviz (Windows Users)
 
-For the Alpha-Beta pruning visualization to work properly on Windows, you must install Graphviz separately (it's not included in pip).
+Graph visualization requires Graphviz to be installed separately.
 
-#### Windows Installation:
+### Installation
 
-1. Download the Graphviz installer from: https://graphviz.org/download/
-2. Choose the **Windows** version (msi installer)
-3. Run the installer and follow the installation wizard
-4. **Important:** During installation, check the option to add Graphviz to your system PATH
-5. Alternatively, if you didn't add it to PATH during installation, you can add it manually:
-   - Default installation path: `C:\Program Files\Graphviz\bin`
-   - Add this path to your system environment variables
+1. Visit Graphviz official website
+2. Download the Windows installer
+3. Run installation
+4. Enable **Add Graphviz to PATH**
+5. Finish installation
 
-#### Verify Installation:
+If Graphviz is not added automatically:
 
-After installation, verify that Graphviz is properly installed by running:
+Default location:
+
+```text
+C:\Program Files\Graphviz\bin
+```
+
+Add this folder to your system environment variables.
+
+### Confirm Installation
+
+Run:
 
 ```bash
 dot -V
 ```
 
-You should see the version number of Graphviz.
+If installed correctly, a version number will appear.
 
-#### Uncomment Graphviz Path (if needed):
+### Optional Path Configuration
 
-If you installed Graphviz in a non-standard location, edit `alpha_beta_prunning.py` and uncomment/adjust these lines:
+If Graphviz is installed elsewhere, update:
 
 ```python
 # import os
-# os.environ["PATH"] += os.pathsep + r'C:\Program Files\Graphviz\bin'
+# os.environ["PATH"] += os.pathsep + r"C:\Program Files\Graphviz\bin"
 ```
 
-### Step 3: Verify Installation
+inside:
 
-Run a simple test to ensure everything is working:
+```text
+alpha_beta_algorithm.py
+```
+
+---
+
+## Step 3 — Test Setup
+
+Execute:
 
 ```bash
-python alpha_beta_prunning.py
+python alpha_beta_algorithm.py
 ```
 
-If a `.pdf` or `.svg` file is generated, your setup is successful!
+Successful execution should generate a visualization output.
 
-## How to Run Each Module
+---
 
-### Alpha-Beta Pruning
+# Running the Modules
 
-Run the Alpha-Beta pruning algorithm with game tree visualization:
+## Alpha-Beta Visualization
+
+Execute:
 
 ```bash
-python alpha_beta_prunning.py
+python alpha_beta_algorithm.py
 ```
 
-**Output:**
-- Generates a visual representation of the game tree
-- Shows which branches were pruned
-- Creates output file (PDF, SVG, or PNG format) based on Graphviz rendering
-- Displays final evaluation values and pruning statistics
+Expected Output:
 
-### Hidden Markov Model - Viterbi Algorithm
+* Generated decision tree
+* Pruned branch highlights
+* Graph export
+* Evaluation statistics
 
-Execute the Viterbi algorithm for HMM:
+---
+
+## Hidden Markov Model (Viterbi)
+
+Execute:
 
 ```bash
-python hmm_viterbi.py
+python viterbi_algorithm.py
 ```
 
-**Output:**
-- Displays the most likely hidden state sequence
-- Shows the Viterbi probability matrix
-- Generates visualization plots using matplotlib
-- Outputs transition path tracking information
+Expected Output:
 
-### Tic-Tac-Toe Game
+* Hidden state predictions
+* Probability matrix
+* Visualization graphs
+* Transition tracking
 
-Play Tic-Tac-Toe against the AI:
+---
+
+## Tic-Tac-Toe AI
+
+Execute:
 
 ```bash
-python tic_tac_toe.py
+python tic_tac_toe_game.py
 ```
 
-**How to Play:**
-- The board is represented as a 3x3 grid
-- Enter your move as a position (0-8) when prompted
-- Board positions:
-  ```
-  0 | 1 | 2
-  ---------
-  3 | 4 | 5
-  ---------
-  6 | 7 | 8
-  ```
-- You play as 'O', the AI plays as 'X'
-- The AI uses the minimax algorithm to determine optimal moves
-- The game ends when someone wins or the board is full
+Gameplay Rules:
 
-## Troubleshooting
+Board layout:
 
-### "graphviz" module not found
-**Solution:** Run `pip install graphviz`
-
-### "Graphviz executable not found"
-**Solution:** This means Graphviz is not installed on your system. Follow the installation steps above for your operating system.
-
-### Visualization files not generated
-**Solution:** Ensure Graphviz is properly installed and added to your system PATH. Restart your terminal/IDE after installing Graphviz.
-
-### Import errors for numpy, matplotlib, or contourpy
-**Solution:** Reinstall all dependencies: `pip install -r requirements.txt`
-
-## Project Structure
-
+```text
+0 | 1 | 2
+---------
+3 | 4 | 5
+---------
+6 | 7 | 8
 ```
+
+Instructions:
+
+* Enter values from 0–8
+* Player uses **O**
+* AI uses **X**
+* Game ends after a win or draw
+
+---
+
+# Troubleshooting
+
+### Graphviz Import Errors
+
+Install:
+
+```bash
+pip install graphviz
+```
+
+---
+
+### Graph Rendering Issues
+
+Verify:
+
+* Graphviz installation
+* PATH configuration
+* Restart terminal after installation
+
+---
+
+### Missing Python Packages
+
+Reinstall dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Repository Layout
+
+```text
 AI Assignment/
-├── README.md                 # This file
-├── requirements.txt          # Python dependencies
-├── alpha_beta_prunning.py   # Alpha-Beta pruning with visualization
-├── hmm_viterbi.py           # Viterbi algorithm implementation
-├── tic_tac_toe.py           # Tic-Tac-Toe game with AI
-└── .gitignore              # Git ignore rules
+├── README_PROJECT.md
+├── requirements.txt
+├── alpha_beta_algorithm.py
+├── viterbi_algorithm.py
+├── tic_tac_toe_game.py
+├── .gitignore
 ```
 
-## Technical Details
+---
 
-### Alpha-Beta Pruning Algorithm
-- **Time Complexity:** O(b^(d/2)) in best case, O(b^d) in worst case
-- **Space Complexity:** O(d) where d is tree depth
-- **Use Case:** Game tree searching, AI decision-making
+# Algorithm Information
+
+### Alpha-Beta Optimization
+
+* Best Case: O(b^(d/2))
+* Worst Case: O(b^d)
+* Used in strategic decision systems
 
 ### Viterbi Algorithm
-- **Time Complexity:** O(N² × T) where N is number of states, T is sequence length
-- **Space Complexity:** O(N × T)
-- **Use Case:** Speech recognition, DNA sequencing, hidden state inference
 
-### Minimax Algorithm (Tic-Tac-Toe)
-- **Implementation:** Recursive search with game state evaluation
-- **Optimization:** Alpha-Beta pruning for efficiency
-- **Strategy:** AI plays optimally to never lose
+* Complexity: O(N² × T)
+* Common in sequence prediction and inference
 
-## Notes
+### Minimax Strategy
 
-- Windows users must follow the Graphviz installation steps for full functionality
+* Recursive search model
+* Enhanced using Alpha-Beta optimization
+* Produces optimal gameplay decisions
+
+---
+
+# Additional Notes
+
+For complete visualization support, Graphviz installation is recommended—especially on Windows systems.
 
